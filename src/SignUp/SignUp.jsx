@@ -1,8 +1,12 @@
 import login from "../assets/logIn.json";
 import Lottie from "lottie-react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const SignUp = () => {
+  const {createUser} = useContext(AuthContext);
+ 
     return (
         <div className="hero min-h-screen max-w-6xl mx-auto">
         <div className="hero-content flex-col lg:flex-row-reverse ">
