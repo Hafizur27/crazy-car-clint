@@ -46,7 +46,7 @@ const LogIn = () => {
             </form>
             <h3 className="font-bold mt-3">Log in with</h3>
             <button className="btn btn-outline btn-primary w-1/4">
-              <FaGoogle />{" "}
+              <FaGoogle />
             </button>
             <div>
               <small className="text-sm">
