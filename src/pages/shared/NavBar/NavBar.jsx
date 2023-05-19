@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import nav from "../../../assets/navbar.jpg"
+
+import nav from "../../../assets/logo.png"
 
 
 const NavBar = () => {
@@ -17,7 +18,7 @@ const NavBar = () => {
    
 </>
     return (
-        <div className="navbar  h-28 mb-4">
+        <div className="navbar  h-28 mb-4 bg-neutral text-neutral-content">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -29,9 +30,9 @@ const NavBar = () => {
                 </div>
               <div className="flex items-center">
               <Link to="/" >
-                    <img src={nav} alt="" />
+                    <img src={nav} alt="" className=""/>
                 </Link>
-                <h1 className="text-3xl font-bold ">Crazy <span className="text-red-500">Car</span></h1>
+                <h1 className="text-3xl font-bold w-full ">Crazy <span className="text-red-500">Car</span></h1>
               </div>
             </div>
             <div className="navbar-center hidden lg:flex">

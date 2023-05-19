@@ -40,12 +40,12 @@ const LogIn = () => {
                 <input
                   type="submit"
                   value="Log-In"
-                  className="btn btn-warning"
+                  className="btn bg-red-700"
                 />
               </div>
             </form>
             <h3 className="font-bold mt-3">Log in with</h3>
-            <button className="btn btn-outline btn-primary w-1/4">
+            <button className="btn btn-outline btn-primary w-1/4 ">
               <FaGoogle />
             </button>
             <div>

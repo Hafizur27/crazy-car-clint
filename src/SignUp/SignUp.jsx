@@ -39,7 +39,7 @@ const SignUp = () => {
                 <input type="photo" placeholder="enter your photo" name="photo" className="input input-bordered" />
               </div>
               <div className="form-control mt-6">
-                <input type="submit" value="Sign-Up" className="btn btn-warning" />
+                <input type="submit" value="Sign-Up" className="btn bg-red-700" />
               </div>
              </form>
              
