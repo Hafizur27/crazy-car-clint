@@ -1,11 +1,12 @@
 import footer from "../../../assets/logo.png";
 import { BsFacebook, BsTwitter, BsYoutube } from "react-icons/bs";
+import { SiAdguard } from "react-icons/si";
 
 const Footer = () => {
   return (
     <footer className=" footer p-10 bg-neutral text-neutral-content">
       <div>
-      <p className="font-bold text-4xl ml-11">
+      <p className="font-bold text-lg lg:text-4xl lg:ml-11">
           Crazy <span className="text-red-500">Car</span>
         </p>
         <img src={footer} alt="" className="w-1/2" />
@@ -25,7 +26,7 @@ const Footer = () => {
         <a className="link link-hover">Email: info@gmail.com</a>
       </div>
       <div>
-        <span className="footer-title">social</span>
+        <span className="footer-title"><SiAdguard className="w-8 h-8 text-rose-600" /></span>
         <a className="link link-hover">
           <BsFacebook className="w-6 h-6 text-blue-600" />
         </a>
