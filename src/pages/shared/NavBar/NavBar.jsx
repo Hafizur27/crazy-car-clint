@@ -19,7 +19,8 @@ const NavBar = () => {
 
     const navItems = <>
     <li><Link to="/">Home</Link> </li>
-    <li> <Link to="/about">All Toy</Link> </li>
+    <li> <Link to="/blogs">Blogs</Link> </li>
+    <li> <Link to="/allToys">All Toy</Link> </li>
     {
         user?.email?  <>
         <li><Link to="/bookings">My Toy</Link></li>
@@ -28,7 +29,7 @@ const NavBar = () => {
        <li title={user?.displayName}><img src={user?.photoURL} alt="" className="w-1/2" /> </li>
     </>: <li> <Link to="/login">Login</Link> </li>
     }
-     <li> <Link to="/blog">Blogs</Link> </li>
+     
    
 </>
     return (

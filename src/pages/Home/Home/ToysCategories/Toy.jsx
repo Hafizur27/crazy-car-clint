@@ -1,5 +1,20 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
+
 const Toy = ({ toy }) => {
+  const {user} = useContext(AuthContext);
   const { photo, name, price, rating } = toy;
+  const handelDetails = () =>{
+    if(user?.email){
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<LinK to="/register"/>Register Now</Link>'
+      })
+    }
+  }
   return (
     <div>
       <div className="card h-screen bg-base-100 shadow-xl mb-4 mr-4">
@@ -11,7 +26,7 @@ const Toy = ({ toy }) => {
           <p>Price : {price}</p>
           <p>Ratings : {rating}</p>
           <div className="">
-            <button className="btn btn-primary"> Details</button>
+            <button onClick={handelDetails} className="btn bg-red-700"> Details</button>
           </div>
         </div>
       </div>
