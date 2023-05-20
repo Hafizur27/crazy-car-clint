@@ -19,8 +19,17 @@ const AddToy = () => {
         const quantity = form.quantity.value;
         const addedToyInfo ={ photo, name, seller, email, category, description, price, rating, quantity }
         console.log(addedToyInfo);
-
-
+        fetch('http://localhost:5000/toys', {
+            method: "POST",
+            headers:{
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(addedToyInfo)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     };
 
   return (
@@ -62,6 +71,7 @@ const AddToy = () => {
                 </label>
                 <input
                   type="text"
+                  defaultValue={user?.displayName}
                   placeholder="Enter Name of Seller"
                   name="seller"
                   className="input input-bordered"
@@ -73,6 +83,7 @@ const AddToy = () => {
                 </label>
                 <input
                   type="email"
+                  defaultValue={user?.email}
                   placeholder="Enter Seller Email"
                   name="email"
                   className="input input-bordered"
