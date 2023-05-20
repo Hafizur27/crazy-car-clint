@@ -23,7 +23,7 @@ const NavBar = () => {
     <li> <Link to="/allToys">All Toy</Link> </li>
     {
         user?.email?  <>
-        <li><Link to="/bookings">My Toy</Link></li>
+        <li><Link to="/myToy">My Toy</Link></li>
         <li><Link to="/addToy" >Add A Toy </Link></li>
         <li> <button onClick={handelLogOut}>Log-out</button> </li>
        <li title={user?.displayName}><img src={user?.photoURL} alt="" className="w-1/2" /> </li>
