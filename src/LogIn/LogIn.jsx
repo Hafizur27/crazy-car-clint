@@ -4,6 +4,8 @@ import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
+
 
 const LogIn = () => {
 
@@ -16,7 +18,34 @@ const LogIn = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
+    signIn(email, password)
+    .then(result =>{
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      if(loggedUser){
+        Swal.fire({
+          title: 'Successfully log-in !',
+          icon: 'success',
+          confirmButtonText: 'Thank you !!'
+        })
+      }
+      event.target.reset();
+    })
+    .catch(error => {
+      console.log(error);
+    })
   };
+
+  const handelGoogleLogIn = () =>{
+    googleSignIn()
+    .then(result => {
+      const user = result.user;
+      console.log(user);
+    })
+    .catch(error =>{
+      console.log(error.message);
+    })
+  }
 
   return (
     <div className="hero min-h-screen max-w-6xl mx-auto">
@@ -59,7 +88,7 @@ const LogIn = () => {
               </div>
             </form>
             <h3 className="font-bold mt-3">Log in with</h3>
-            <button className="btn btn-outline btn-primary w-1/4 ">
+            <button onClick={handelGoogleLogIn} className="btn btn-outline btn-primary w-1/4 ">
               <FaGoogle />
             </button>
             <div>

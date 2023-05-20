@@ -26,9 +26,10 @@ const SignUp = () => {
         Swal.fire({
           title: 'Successfully user created !',
           icon: 'success',
-          confirmButtonText: 'Ok'
+          confirmButtonText: 'Thank you !!'
         })
       }
+      event.target.reset();
     })
     .catch(error => console.log(error.message))
   };
