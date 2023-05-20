@@ -1,4 +1,3 @@
-
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -9,7 +8,6 @@ const firebaseConfig = {
   messagingSenderId:import.meta.env.VITE_messagingSenderId,
   appId:import.meta.env.VITE_appId
 };
-
 
 const app = initializeApp(firebaseConfig);
 export default app;

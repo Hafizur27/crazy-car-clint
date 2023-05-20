@@ -6,7 +6,18 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 
 const LogIn = () => {
+
+
   const {signIn, googleSignIn} = useContext(AuthContext);
+
+  const handelLogIn = event =>{
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+  };
+
   return (
     <div className="hero min-h-screen max-w-6xl mx-auto">
       <div className="hero-content flex-col lg:flex-row-reverse ">
@@ -16,7 +27,7 @@ const LogIn = () => {
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
             <h3 className="font-semibold">Please log in</h3>
-            <form>
+            <form onSubmit={handelLogIn}>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>

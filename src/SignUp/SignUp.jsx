@@ -3,9 +3,35 @@ import Lottie from "lottie-react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from 'sweetalert2'
 
 const SignUp = () => {
+
+
   const {createUser} = useContext(AuthContext);
+
+  const handelSignUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    console.log(name, email, password, photo);
+    createUser(email, password)
+    .then(result =>{
+      const user = result.user;
+      console.log(user);
+      if(user){
+        Swal.fire({
+          title: 'Successfully user created !',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        })
+      }
+    })
+    .catch(error => console.log(error.message))
+  };
  
     return (
         <div className="hero min-h-screen max-w-6xl mx-auto">
@@ -16,7 +42,7 @@ const SignUp = () => {
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="card-body">
               <h3 className="font-semibold">Please Register now</h3>
-             <form>
+             <form onSubmit={handelSignUp}>
              <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
