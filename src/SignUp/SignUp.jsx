@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 const SignUp = () => {
 
 
-  const {createUser} = useContext(AuthContext);
+  const {createUser, updateUserData} = useContext(AuthContext);
 
   const handelSignUp = (event) => {
     event.preventDefault();
@@ -30,9 +30,12 @@ const SignUp = () => {
         })
       }
       event.target.reset();
+      updateUserData(user, photo, name);
     })
     .catch(error => console.log(error.message))
   };
+
+  
  
     return (
         <div className="hero min-h-screen max-w-6xl mx-auto">

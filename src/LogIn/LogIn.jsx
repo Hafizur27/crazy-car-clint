@@ -10,7 +10,8 @@ import Swal from "sweetalert2";
 const LogIn = () => {
 
 
-  const {signIn, googleSignIn} = useContext(AuthContext);
+  const {signIn, googleSignIn, user} = useContext(AuthContext);
+  console.log(user)
 
   const handelLogIn = event =>{
     event.preventDefault();
@@ -49,6 +50,7 @@ const LogIn = () => {
 
   return (
     <div className="hero min-h-screen max-w-6xl mx-auto">
+    
       <div className="hero-content flex-col lg:flex-row-reverse ">
         <div className="lg:ml-6">
           <Lottie animationData={login} loop={true} className="w-2/3 mx-auto" />
