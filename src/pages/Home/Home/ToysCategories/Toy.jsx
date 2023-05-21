@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Toy = ({ toy }) => {
   const {user} = useContext(AuthContext);
-  const { photo, name, price, rating, _id } = toy;
+  const { photo, name, price, rating,  } = toy;
 
   
   const handelDetails = () =>{

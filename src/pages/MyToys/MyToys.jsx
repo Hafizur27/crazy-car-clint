@@ -13,7 +13,7 @@ const MyToys = () => {
       .then((data) => {
         setMyToys(data);
       });
-  }, []);
+  }, [url]);
 
   return (
     <div className="overflow-x-auto my-8 p-8">
@@ -41,7 +41,7 @@ const MyToys = () => {
 
         <tbody>
           {myToys?.map((toyRow) => (
-            <MyToyRow key={toyRow._id} toyRow={toyRow}></MyToyRow>
+            <MyToyRow key={toyRow._id} toyRow={toyRow} myToys={myToys} ></MyToyRow>
           ))}
         </tbody>
       </table>
