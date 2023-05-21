@@ -3,7 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyToyRow = ({ toyRow, myToys }) => {
+const MyToyRow = ({ toyRow, myToys, setMyToys }) => {
   const {
     photo,
     name,
@@ -42,6 +42,9 @@ Swal.fire({
           'Toy has been deleted.',
           'success'
         )
+        const remaining = myToys.filter(toy => toy._id !== _id);
+        setMyToys(remaining);
+       
       }
     })
   }

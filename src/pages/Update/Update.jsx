@@ -1,19 +1,42 @@
 import { useLoaderData } from "react-router-dom";
 import update from "../../assets/update.json";
 import Lottie from "lottie-react";
+import Swal from "sweetalert2";
 
 const Update = () => {
 
   const UpdateToy = useLoaderData();
-  console.log(UpdateToy);
+  console.log(UpdateToy)
+  const {price, quantity, description, _id} = UpdateToy;
     const handelUpdate = event =>{
         event.preventDefault();
         const form = event.target;
         const price = form.price.value;
         const quantity = form.quantity.value;
         const description = form.description.value;
-        const updateUser = {price, quantity, description};
-        console.log(updateUser);
+        const updateToyInfo = {price, quantity, description};
+       fetch(`http://localhost:5000/myToys/${_id}`,{
+        method: "PUT",
+        headers:{
+          "content-type": "application/json"
+        },
+        body: JSON.stringify(updateToyInfo)
+       })
+       .then(res => res.json())
+       .then(data => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+              title: 'Success!',
+              text: 'Toy Updated Successfully',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+          })
+      }
+      event.target.reset();
+      
+
+       })
 
 
     };
@@ -39,6 +62,7 @@ const Update = () => {
                     type="text"
                     placeholder="Update price"
                     name="price"
+                    defaultValue={price}
                     className="input input-bordered"
                   />
                 </div>
@@ -50,6 +74,7 @@ const Update = () => {
                     type="text"
                     placeholder="Update quantity"
                     name="quantity"
+                    defaultValue={quantity}
                     className="input input-bordered"
                   />
                 </div>
@@ -61,6 +86,7 @@ const Update = () => {
                     type="text"
                     placeholder="Update description"
                     name="description"
+                    defaultValue={description}
                     className="input input-bordered"
                   />
                 </div>

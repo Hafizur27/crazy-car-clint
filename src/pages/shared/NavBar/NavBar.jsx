@@ -47,7 +47,7 @@ const NavBar = () => {
               <Link to="/" >
                     <img src={nav} alt="" className=""/>
                 </Link>
-                <h1 className="text-3xl font-bold w-full ">Crazy <span className="text-red-500">Car</span></h1>
+                <Link to='/' className="text-3xl font-bold w-full ">Crazy <span className="text-red-500">Car</span></Link>
               </div>
             </div>
             <div className="navbar-center hidden lg:flex ">

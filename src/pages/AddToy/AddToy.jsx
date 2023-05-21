@@ -20,7 +20,7 @@ const AddToy = () => {
         const rating = form.rating.value;
         const quantity = form.quantity.value;
         const addedToyInfo ={ photo, name, seller, email, category, description, price, rating, quantity }
-        console.log(addedToyInfo);
+       
         fetch('http://localhost:5000/toys', {
             method: "POST",
             headers:{

@@ -3,7 +3,7 @@ import banner from "../../../../assets/banner.jpg"
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen relative" style={{ backgroundImage: `url(${banner})` }}>
+        <div className="hero min-h-screen relative" style={{ backgroundImage: `url(${banner})` }} data-aos="flip-left">
  
   
  
