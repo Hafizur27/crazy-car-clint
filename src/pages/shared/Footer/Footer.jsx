@@ -4,12 +4,14 @@ import { SiAdguard } from "react-icons/si";
 
 const Footer = () => {
   return (
-    <footer className=" footer p-10 bg-neutral text-neutral-content">
+   
+     <footer className=" footer p-10 bg-neutral text-neutral-content">
       <div>
       <p className="font-bold text-lg lg:text-4xl lg:ml-11">
           Crazy <span className="text-red-500">Car</span>
         </p>
         <img src={footer} alt="" className="w-1/2" />
+        <small className="ms-4">Copyright © 2023 - All right reserved</small>
        
       </div>
 
@@ -18,6 +20,7 @@ const Footer = () => {
         <a className="link link-hover">Dhaka</a>
         <a className="link link-hover">Rajshahi</a>
         <a className="link link-hover">khulna</a>
+        
       </div>
 
       <div>
@@ -37,7 +40,10 @@ const Footer = () => {
           <BsYoutube className="w-6 h-6 text-red-600" />
         </a>
       </div>
+    
     </footer>
+    
+   
   );
 };
 

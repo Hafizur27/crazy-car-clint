@@ -1,10 +1,20 @@
+
 import { useLoaderData } from "react-router-dom";
+import ToyRow from "./ToyRow";
+
+
 
 
 const AllToys = () => {
+  
   const allToys = useLoaderData();
+
+  
   return (
-    <div className="overflow-x-auto my-10 p-8">
+    <div className="overflow-x-auto my-8 p-8">
+      <h3 className="text-3xl font-bold text-teal-500 mb-8">
+        All crazy cars Information
+      </h3>
       <table className="table table-zebra w-full">
         <thead>
           <tr>
@@ -14,22 +24,14 @@ const AllToys = () => {
             <th>Price</th>
             <th>Quantity</th>
             <th></th>
-            
           </tr>
         </thead>
-       {
-        allToys?.map(toy =>  <tbody key={toy._id}>
-            <tr>
-              <th>{toy.seller}</th>
-              <td>{toy.name}</td>
-              <td>{toy.category}</td>
-              <td>{toy.price}</td>
-              <td>{toy.quantity}</td>
-              <td><button className="btn bg-red-600">Details</button></td>
-              
-            </tr>
-          </tbody>)
-       }
+
+        <tbody>
+          {
+            allToys?.map(toy =><ToyRow key={toy._id} toy={toy}></ToyRow>)
+          }
+        </tbody>
       </table>
     </div>
   );

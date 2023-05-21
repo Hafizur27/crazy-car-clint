@@ -5,14 +5,20 @@ import Swal from "sweetalert2";
 const Toy = ({ toy }) => {
   const {user} = useContext(AuthContext);
   const { photo, name, price, rating } = toy;
+
+  
   const handelDetails = () =>{
-    if(user?.email){
+    if(!(user?.email)){
       Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Something went wrong!',
-        footer: '<LinK to="/register"/>Register Now</Link>'
+        position: 'top-end',
+        icon: 'warning',
+        title: 'log in first to view details',
+        text: 'You have to log in first to view details!',
+        showConfirmButton: false,
+        timer: 2000
       })
+      window.location.href = "/logIn";
+     
     }
   }
   return (
@@ -24,9 +30,9 @@ const Toy = ({ toy }) => {
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <p>Price : {price}</p>
-          <p>Ratings : {rating}</p>
+          <p>Ratings : {rating} star</p>
           <div className="">
-            <button onClick={handelDetails} className="btn bg-red-700"> Details</button>
+            <button onClick={handelDetails} className="btn bg-red-500"> Details</button>
           </div>
         </div>
       </div>

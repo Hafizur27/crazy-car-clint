@@ -22,7 +22,7 @@ const SignUp = () => {
     .then(result =>{
       const user = result.user;
       console.log(user);
-      if(user){
+      if(user.uid){
         Swal.fire({
           title: 'Successfully user created !',
           icon: 'success',
@@ -31,6 +31,7 @@ const SignUp = () => {
       }
       event.target.reset();
       updateUserData(user, photo, name);
+      window.location.href = "/logIn";
     })
     .catch(error => console.log(error.message))
   };

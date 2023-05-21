@@ -20,9 +20,9 @@ const ToysCategories = () => {
         <div>
      <div className="w-1/5 mx-auto mb-12">
         <h2 className="text-teal-400 font-bold text-3xl mb-4">Toy Categories</h2>
-      <div className="tabs">
+      <div className="tabs font-extrabold">
         <a onClick={() => handleTabClick("Sports")} className="tab tab-bordered">Sport</a>
-        <a onClick={() => handleTabClick("Truck")} className="tab tab-bordered tab-active">Truck</a>
+        <a onClick={() => handleTabClick("Truck")} className="tab tab-bordered ">Truck</a>
         <a onClick={() => handleTabClick("Regular")} className="tab tab-bordered">Regular</a>
       </div>
     </div>

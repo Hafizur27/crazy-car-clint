@@ -11,7 +11,6 @@ const LogIn = () => {
 
 
   const {signIn, googleSignIn, user} = useContext(AuthContext);
-  console.log(user)
 
   const handelLogIn = event =>{
     event.preventDefault();
@@ -23,14 +22,15 @@ const LogIn = () => {
     .then(result =>{
       const loggedUser = result.user;
       console.log(loggedUser);
-      if(loggedUser){
+      if(loggedUser.uid){
         Swal.fire({
           title: 'Successfully log-in !',
           icon: 'success',
-          confirmButtonText: 'Thank you !!'
+          confirmButtonText: 'ok'
         })
       }
       event.target.reset();
+      window.location.href = "/";
     })
     .catch(error => {
       console.log(error);
@@ -42,6 +42,14 @@ const LogIn = () => {
     .then(result => {
       const user = result.user;
       console.log(user);
+      if(user.uid){
+        Swal.fire({
+          title: 'Successfully log-in !',
+          icon: 'success',
+          confirmButtonText: 'ok'
+        })
+      }
+      window.location.href = "/";
     })
     .catch(error =>{
       console.log(error.message);
