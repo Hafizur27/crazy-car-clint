@@ -5,60 +5,62 @@ import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const LogIn = () => {
+  const { signIn, googleSignIn, user } = useContext(AuthContext);
 
-
-  const {signIn, googleSignIn, user} = useContext(AuthContext);
-
-  const handelLogIn = event =>{
+  const handelLogIn = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     console.log(email, password);
     signIn(email, password)
-    .then(result =>{
-      const loggedUser = result.user;
-      console.log(loggedUser);
-      if(loggedUser.uid){
-        Swal.fire({
-          title: 'Successfully log-in !',
-          icon: 'success',
-          confirmButtonText: 'ok'
-        })
-      }
-      event.target.reset();
-      window.location.href = "/";
-    })
-    .catch(error => {
-      console.log(error);
-    })
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        if (loggedUser.uid) {
+          Swal.fire({
+            title: "Successfully log-in !",
+            icon: "success",
+            confirmButtonText: "ok",
+          });
+        }
+        event.target.reset();
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  const handelGoogleLogIn = () =>{
+  const handelGoogleLogIn = () => {
     googleSignIn()
-    .then(result => {
-      const user = result.user;
-      console.log(user);
-      if(user.uid){
-        Swal.fire({
-          title: 'Successfully log-in !',
-          icon: 'success',
-          confirmButtonText: 'ok'
-        })
-      }
-      window.location.href = "/";
-    })
-    .catch(error =>{
-      console.log(error.message);
-    })
-  }
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        if (user.uid) {
+          Swal.fire({
+            title: "Successfully log-in !",
+            icon: "success",
+            confirmButtonText: "ok",
+          });
+        }
+        window.location.href = "/";
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return (
     <div className="hero min-h-screen max-w-6xl mx-auto">
-    
+      <Helmet>
+        <title>Log In</title>
+      </Helmet>
+
       <div className="hero-content flex-col lg:flex-row-reverse ">
         <div className="lg:ml-6">
           <Lottie animationData={login} loop={true} className="w-2/3 mx-auto" />
@@ -98,7 +100,10 @@ const LogIn = () => {
               </div>
             </form>
             <h3 className="font-bold mt-3">Log in with</h3>
-            <button onClick={handelGoogleLogIn} className="btn btn-outline btn-primary w-1/4 ">
+            <button
+              onClick={handelGoogleLogIn}
+              className="btn btn-outline btn-primary w-1/4 "
+            >
               <FaGoogle />
             </button>
             <div>

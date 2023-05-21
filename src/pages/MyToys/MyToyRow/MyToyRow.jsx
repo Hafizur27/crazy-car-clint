@@ -12,6 +12,7 @@ const MyToyRow = ({ toyRow }) => {
     price,
     rating,
     quantity,
+    _id
   } = toyRow;
   return (
     <tr>
@@ -31,7 +32,7 @@ const MyToyRow = ({ toyRow }) => {
       <td>{rating}</td>
       <td>{quantity}</td>
       <td>
-        <Link to='/update' className="btn bg-blue-500">
+        <Link to={`/${_id}`} className="btn bg-blue-500">
           <GrCycle />
         </Link>
       </td>

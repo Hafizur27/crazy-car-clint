@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Toy = ({ toy }) => {
   const {user} = useContext(AuthContext);
-  const { photo, name, price, rating } = toy;
+  const { photo, name, price, rating, _id } = toy;
 
   
   const handelDetails = () =>{
@@ -22,7 +23,7 @@ const Toy = ({ toy }) => {
     }
   }
   return (
-    <div>
+    <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine">
       <div className="card h-screen bg-base-100 shadow-xl mb-4 mr-4">
         <figure>
           <img src={photo} alt="Shoes" className=""/>
@@ -32,7 +33,7 @@ const Toy = ({ toy }) => {
           <p>Price : {price}</p>
           <p>Ratings : {rating} star</p>
           <div className="">
-            <button onClick={handelDetails} className="btn bg-red-500"> Details</button>
+           <Link> <button onClick={handelDetails} className="btn bg-red-500"> Details</button></Link>
           </div>
         </div>
       </div>

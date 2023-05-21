@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const Blogs = () => {
   return (
     <div>
+      <Helmet>
+        <title>Blogs Page</title>
+      </Helmet>
       <div className="my-8 px-8">
         <h3 className="text-xl font-bold mb-4">
           1. What is an access token and refresh token? <br /> How do they work
@@ -117,12 +122,54 @@ const Blogs = () => {
           functionality, including routing, middleware support, handling HTTP
           requests and responses, and rendering views. Express.js is known for
           its simplicity and ease of use, allowing developers to quickly set up
-          robust web servers. <br /> <br />NestJS is a progressive Node.js framework for building efficient, scalable, and maintainable server-side applications. It is designed to enhance productivity and enable the creation of robust and modular applications using TypeScript, a typed superset of JavaScript.
+          robust web servers. <br /> <br />
+          NestJS is a progressive Node.js framework for building efficient,
+          scalable, and maintainable server-side applications. It is designed to
+          enhance productivity and enable the creation of robust and modular
+          applications using TypeScript, a typed superset of JavaScript.
         </p>
       </div>
       <div className="mb-8 px-8 ">
-        <h2 className="mb-4 text-xl font-bold">4. What is MongoDB aggregate and how does it work ?</h2>
-        <p>In MongoDB, the aggregate method is a powerful tool used for performing complex data processing and analysis on collections. It allows you to perform various transformations, aggregations, and computations on the documents in a collection. <br />The aggregate method accepts an array of stages that define the processing pipeline. Each stage represents an operation or transformation that is applied to the documents as they pass through the pipeline. Here is an overview of the key concepts and stages used in the MongoDB aggregation framework: <br />Match: This stage filters the documents in the collection based on specified criteria using query operators. It works similar to the find method but within the aggregation pipeline. <br />Project: The project stage allows you to shape the output documents by specifying the fields to include or exclude. You can rename fields, create computed fields, and reshape the structure of the documents. <br />Group: The group stage groups documents by a specified key and applies various aggregation operations to the grouped data. Common operations include sum, average, count, minimum, maximum, and more. It enables you to perform calculations across multiple documents. <br />Sort: The sort stage orders the documents in the pipeline based on specified sort criteria. You can sort by one or multiple fields, in ascending or descending order. <br />Limit and Skip: These stages allow you to limit the number of documents returned in the result set (limit) and skip a specified number of documents (skip). They are useful for pagination and controlling the size of the result set. <br /> <br />Lookup: The lookup stage performs a left outer join between two collections and combines matching documents based on a specified condition. It is useful for retrieving related data from multiple collections. <br />Unwind: The unwind stage deconstructs an array field in the documents, creating a separate document for each element of the array. This is helpful when you want to work with individual array elements in subsequent pipeline stages.</p>
+        <h2 className="mb-4 text-xl font-bold">
+          4. What is MongoDB aggregate and how does it work ?
+        </h2>
+        <p>
+          In MongoDB, the aggregate method is a powerful tool used for
+          performing complex data processing and analysis on collections. It
+          allows you to perform various transformations, aggregations, and
+          computations on the documents in a collection. <br />
+          The aggregate method accepts an array of stages that define the
+          processing pipeline. Each stage represents an operation or
+          transformation that is applied to the documents as they pass through
+          the pipeline. Here is an overview of the key concepts and stages used
+          in the MongoDB aggregation framework: <br />
+          Match: This stage filters the documents in the collection based on
+          specified criteria using query operators. It works similar to the find
+          method but within the aggregation pipeline. <br />
+          Project: The project stage allows you to shape the output documents by
+          specifying the fields to include or exclude. You can rename fields,
+          create computed fields, and reshape the structure of the documents.{" "}
+          <br />
+          Group: The group stage groups documents by a specified key and applies
+          various aggregation operations to the grouped data. Common operations
+          include sum, average, count, minimum, maximum, and more. It enables
+          you to perform calculations across multiple documents. <br />
+          Sort: The sort stage orders the documents in the pipeline based on
+          specified sort criteria. You can sort by one or multiple fields, in
+          ascending or descending order. <br />
+          Limit and Skip: These stages allow you to limit the number of
+          documents returned in the result set (limit) and skip a specified
+          number of documents (skip). They are useful for pagination and
+          controlling the size of the result set. <br /> <br />
+          Lookup: The lookup stage performs a left outer join between two
+          collections and combines matching documents based on a specified
+          condition. It is useful for retrieving related data from multiple
+          collections. <br />
+          Unwind: The unwind stage deconstructs an array field in the documents,
+          creating a separate document for each element of the array. This is
+          helpful when you want to work with individual array elements in
+          subsequent pipeline stages.
+        </p>
       </div>
     </div>
   );

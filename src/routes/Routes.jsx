@@ -23,38 +23,39 @@ const router = createBrowserRouter([
           element: <Home></Home>
         },
         {
-          path: "addToy",
+          path: "/addToy",
 
           element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
         },
         {
-            path:"logIn",
+            path:"/logIn",
             element: <LogIn></LogIn>
         },
         {
-            path: "register",
+            path: "/register",
             element: <SignUp></SignUp>
         },
         {
-          path: "allToys",
+          path: "/allToys",
           element: <AllToys></AllToys>,
           loader: () => fetch('http://localhost:5000/allToys')
         },
         {
-          path: "allToys/:id",
+          path: "/allToys/:id",
           element: <SingleToy></SingleToy>
         },
         {
-          path: "blogs",
+          path: "/blogs",
           element: <Blogs></Blogs>
         },
         {
-          path: "myToy",
+          path: "/myToy",
           element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
         },
         {
-          path: "update",
-          element: <Update></Update>
+          path: "/:id",
+          element: <Update></Update>,
+          loader: ({params}) => fetch(`http://localhost:5000/myToys/${params.id}`) 
         }
       ]
     },

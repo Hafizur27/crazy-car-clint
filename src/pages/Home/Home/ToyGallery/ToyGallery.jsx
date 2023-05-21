@@ -8,7 +8,7 @@ import toy6 from "../../../../assets/toy/toy6.json";
 
 const ToyGallery = () => {
   return (
-    <div className="mt-4 mb-10">
+    <div className="mt-4 mb-10" data-aos="fade-up">
       <h2 className="text-4xl font-bold text-center text-teal-400">
         Toy Gallery
       </h2>

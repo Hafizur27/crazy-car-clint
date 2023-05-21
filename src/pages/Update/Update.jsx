@@ -1,7 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import update from "../../assets/update.json";
 import Lottie from "lottie-react";
 
 const Update = () => {
+
+  const UpdateToy = useLoaderData();
+  console.log(UpdateToy);
     const handelUpdate = event =>{
         event.preventDefault();
         const form = event.target;
