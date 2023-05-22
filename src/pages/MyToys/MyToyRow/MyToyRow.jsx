@@ -30,7 +30,7 @@ Swal.fire({
 }).then((result) => {
   if (result.isConfirmed) {
     
-    fetch(`http://localhost:5000/toys/${id}`,{
+    fetch(`https://crazy-car-server.vercel.app/toys/${id}`,{
       method: "DELETE"
     })
     .then(res => res.json())
@@ -70,12 +70,12 @@ Swal.fire({
       <td>{rating}</td>
       <td>{quantity}</td>
       <td>
-        <Link to={`/${_id}`} className="btn bg-blue-500">
+        <Link to={`/${_id}`} className="btn bg-blue-500 border-none">
           <GrCycle />
         </Link>
       </td>
       <td>
-        <button onClick={()=>handelDelete(_id)} className="btn bg-red-600">
+        <button onClick={()=>handelDelete(_id)} className="btn bg-red-600 border-none">
           <MdDelete />
         </button>
       </td>

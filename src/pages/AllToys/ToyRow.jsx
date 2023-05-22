@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ToyRow = ({toy}) => {
     const {user} = useContext(AuthContext);
@@ -30,7 +31,7 @@ const ToyRow = ({toy}) => {
          <td>{category}</td>
          <td>{price}</td>
          <td>{quantity}</td>
-         <td><button onClick={() => handelDetails(_id)} className="btn bg-red-600">Details</button></td>
+         <td><Link to={`/allToys/${_id}`}><button onClick={() => handelDetails(_id)} className="btn bg-red-600 border-none">Details</button></Link></td>
          
        </tr>
     );

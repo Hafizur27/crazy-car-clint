@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
-  const url = `http://localhost:5000/myToys?email=${user?.email}`;
+  const url = `https://crazy-car-server.vercel.app/myToys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -41,7 +41,12 @@ const MyToys = () => {
 
         <tbody>
           {myToys?.map((toyRow) => (
-            <MyToyRow key={toyRow._id} toyRow={toyRow} myToys={myToys} setMyToys={setMyToys}></MyToyRow>
+            <MyToyRow
+              key={toyRow._id}
+              toyRow={toyRow}
+              myToys={myToys}
+              setMyToys={setMyToys}
+            ></MyToyRow>
           ))}
         </tbody>
       </table>

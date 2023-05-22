@@ -1,6 +1,6 @@
 import login from "../assets/logIn.json";
 import Lottie from "lottie-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
@@ -8,9 +8,13 @@ import { Helmet } from "react-helmet";
 
 const SignUp = () => {
   const { createUser, updateUserData } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  
 
   const handelSignUp = (event) => {
     event.preventDefault();
+    
+    setError("");
     const form = event.target;
     const name = form.name.value;
     const email = form.email.value;
@@ -28,11 +32,14 @@ const SignUp = () => {
             confirmButtonText: "Thank you !!",
           });
         }
+        setError("");
         event.target.reset();
         updateUserData(user, photo, name);
         window.location.href = "/logIn";
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
@@ -110,6 +117,7 @@ const SignUp = () => {
                 Log-In
               </Link>
             </small>
+            <p className="text-red-500 mt-2">{error}</p>
           </div>
         </div>
       </div>

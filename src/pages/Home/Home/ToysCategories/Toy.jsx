@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { TbCurrencyTaka } from "react-icons/tb";
 
 const Toy = ({ toy }) => {
   const {user} = useContext(AuthContext);
-  const { photo, name, price, rating,  } = toy;
+  const { photo, name, price, rating, _id  } = toy;
 
   
   const handelDetails = () =>{
@@ -26,14 +27,14 @@ const Toy = ({ toy }) => {
     <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine">
       <div className="card h-screen bg-base-100 shadow-xl mb-4 mr-4">
         <figure>
-          <img src={photo} alt="Shoes" className=""/>
+          <img src={photo} alt="toys" className="w-full"/>
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
-          <p>Price : {price}</p>
+          <p className="flex items-center gap-1">Price : {price}<TbCurrencyTaka className="text-orange-500 h-4 w-4"/></p>
           <p>Ratings : {rating} star</p>
           <div className="">
-           <Link> <button onClick={handelDetails} className="btn bg-red-500"> Details</button></Link>
+           <Link to={`/allToys/${_id}`}> <button onClick={handelDetails} className="btn bg-red-500 border-none"> Details</button></Link>
           </div>
         </div>
       </div>

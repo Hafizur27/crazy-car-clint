@@ -9,7 +9,7 @@ const AllToys = () => {
   const [searchText, setSearchText] = useState("");
 
   const handelToySearch = () => {
-    fetch(`http://localhost:5000/searchToyByText/${searchText}`)
+    fetch(`https://crazy-car-server.vercel.app/searchToyByText/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         SetAllToys(data);
@@ -21,8 +21,8 @@ const AllToys = () => {
       <Helmet>
         <title>Toy Information</title>
       </Helmet>
-      <h3 className="text-3xl font-bold text-teal-500 mb-8">
-        All crazy cars Information
+      <h3 className="text-3xl font-bold mb-8">
+        All crazy cars <span className="text-teal-500 ">Information</span>
       </h3>
       <div className="mb-4">
         <input
@@ -31,7 +31,7 @@ const AllToys = () => {
           placeholder="Search toy here"
           className="input input-bordered w-full max-w-xs"
         />
-        <button onClick={handelToySearch} className="btn btn-outline ml-2">
+        <button onClick={handelToySearch} className="btn btn-outline ml-2 text-red-400">
           Search
         </button>
       </div>

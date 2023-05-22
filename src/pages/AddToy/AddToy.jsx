@@ -8,6 +8,8 @@ const AddToy = () => {
     const {user} = useContext(AuthContext);
 
     const handelAddToy = event => {
+
+
         event.preventDefault();
         const form = event.target;
         const photo = form.photo.value;
@@ -21,7 +23,7 @@ const AddToy = () => {
         const quantity = form.quantity.value;
         const addedToyInfo ={ photo, name, seller, email, category, description, price, rating, quantity }
        
-        fetch('http://localhost:5000/toys', {
+        fetch('https://crazy-car-server.vercel.app/toys', {
             method: "POST",
             headers:{
                 "content-type": "application/json"
@@ -54,7 +56,7 @@ const AddToy = () => {
       <form className="hero-content" onSubmit={handelAddToy}>
       
         <div className=" w-full card shadow-2xl bg-base-100">
-        <h3 className="text-3xl font-bold text-center mt-4 text-teal-400">Please add a toy !!</h3>
+        <h3 className="text-3xl font-bold text-center mt-4 "><span className="text-teal-400">Please</span> add a toy !!</h3>
           <div className="card-body w-5/6 mx-auto">
             <div className="flex gap-4">
               <div className="form-control w-full">

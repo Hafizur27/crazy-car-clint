@@ -1,6 +1,6 @@
 import login from "../assets/logIn.json";
 import Lottie from "lottie-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
@@ -9,10 +9,16 @@ import { Helmet } from "react-helmet";
 
 
 const LogIn = () => {
+  // eslint-disable-next-line no-unused-vars
   const { signIn, googleSignIn, user } = useContext(AuthContext);
+  const [error, setError] = useState("");
+ 
 
   const handelLogIn = (event) => {
     event.preventDefault();
+   
+      setError("");
+  
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -28,11 +34,12 @@ const LogIn = () => {
             confirmButtonText: "ok",
           });
         }
+        setError("");
         event.target.reset();
         window.location.href = "/";
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
 
@@ -48,10 +55,11 @@ const LogIn = () => {
             confirmButtonText: "ok",
           });
         }
+        setError("");
         window.location.href = "/";
       })
       .catch((error) => {
-        console.log(error.message);
+        setError(error.message);
       });
   };
 
@@ -117,6 +125,7 @@ const LogIn = () => {
                 </Link>
               </small>
             </div>
+            <p className="text-red-500 mt-2">{error}</p>
           </div>
         </div>
       </div>

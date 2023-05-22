@@ -26,7 +26,7 @@ const NavBar = () => {
         <li><Link to="/myToy">My Toy</Link></li>
         <li><Link to="/addToy" >Add A Toy </Link></li>
         <li> <button onClick={handelLogOut}>Log-out</button> </li>
-       <li title={user?.displayName}><img src={user?.photoURL} alt="" className="w-1/2" /> </li>
+       <li title={user?.displayName} className="rounded-xl"><img src={user?.photoURL} alt="" className="w-1/2 " /> </li>
     </>: <li> <Link to="/login">Login</Link> </li>
     }
      

@@ -11,7 +11,7 @@ const Banner = () => {
     <div className="max-w-md">
       <h1 className="mb-5 text-4xl font-bold">Perfect Toy Car at Unbeatable Prices</h1>
       <p className="mb-5">Explore Our Range of High-Quality Car Toys for Endless Entertainment . Let Your Little Ones Embark on Exciting Car Toy Journeys.</p>
-      <Link to='/allToys'><button className="btn btn-active bg-red-700 hover:bg-orange-700">Explore Toy</button></Link>
+      <Link to='/allToys'><button className="btn btn-outline btn-warning hover:bg-orange-700">Explore Toy</button></Link>
     </div>
   </div>
   

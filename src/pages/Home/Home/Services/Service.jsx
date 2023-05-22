@@ -4,11 +4,11 @@ import service3 from "../../../../assets/service3.jpg";
 
 const Service = () => {
   return (
-   <div>
-     <h2 className="text-4xl font-bold text-center text-teal-400 mt-10">
-        Why We are best !
+   <div >
+     <h2 className="text-4xl font-bold text-center  mt-10">
+        <span className="text-orange-500">Why We are</span> best !
       </h2>
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10">
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10" >
       <div className="bg-white p-6 rounded-lg shadow-lg" >
         <img
           src={service1}

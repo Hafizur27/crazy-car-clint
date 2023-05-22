@@ -24,7 +24,6 @@ const router = createBrowserRouter([
         },
         {
           path: "/addToy",
-
           element: <PrivateRoute><AddToy></AddToy></PrivateRoute>
         },
         {
@@ -38,11 +37,12 @@ const router = createBrowserRouter([
         {
           path: "/allToys",
           element: <AllToys></AllToys>,
-          loader: () => fetch('http://localhost:5000/allToys')
+          loader: () => fetch('https://crazy-car-server.vercel.app/allToys')
         },
         {
           path: "/allToys/:id",
-          element: <SingleToy></SingleToy>
+          element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
+          loader: ({params}) => fetch(`https://crazy-car-server.vercel.app/myToys/${params.id}`)
         },
         {
           path: "/blogs",
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
         {
           path: "/:id",
           element: <Update></Update>,
-          loader: ({params}) => fetch(`http://localhost:5000/myToys/${params.id}`) 
+          loader: ({params}) => fetch(`https://crazy-car-server.vercel.app/myToys/${params.id}`) 
         }
       ]
     },

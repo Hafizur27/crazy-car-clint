@@ -15,7 +15,7 @@ const Update = () => {
         const quantity = form.quantity.value;
         const description = form.description.value;
         const updateToyInfo = {price, quantity, description};
-       fetch(`http://localhost:5000/myToys/${_id}`,{
+       fetch(`https://crazy-car-server.vercel.app/myToys/${_id}`,{
         method: "PUT",
         headers:{
           "content-type": "application/json"
@@ -94,7 +94,7 @@ const Update = () => {
                   <input
                     type="submit"
                     value="update now"
-                    className="btn btn-outline btn-warning"
+                    className="btn btn-outline btn-error"
                   />
                 </div>
               </form>

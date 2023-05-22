@@ -2,14 +2,14 @@ import about from "../../assets/about.jpg"
 
 const AboutUs = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center md:items-start p-8">
+        <div className="flex flex-col md:flex-row items-center md:items-start p-8 shadow-xl my-10 "  data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine">
         <img
           src={about}
           alt="Toy Car Selling Website"
-          className="w-64 h-64 rounded-lg object-cover"
+          className="w-64 h-72 rounded-lg object-cover"
         />
         <div className="md:ml-8 mt-4 md:mt-0">
-          <h2 className="text-3xl font-bold mb-4">Welcome to Our Toy Car Selling Website</h2>
+          <h2 className="text-3xl font-bold mb-4">About us</h2>
           <p className="text-lg text-gray-700">
             At our toy car selling website, we offer a wide selection of toy cars for children of all ages. Our mission is to provide high-quality, safe, and exciting toy cars that inspire imagination and play. 
           </p>
