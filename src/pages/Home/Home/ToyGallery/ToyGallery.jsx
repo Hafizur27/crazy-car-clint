@@ -12,7 +12,7 @@ const ToyGallery = () => {
   return (
     <div className="mt-4 mb-10">
       <h2 className="text-4xl font-bold text-center ">
-        Toy <span className="text-green-500">Gallery</span>
+        Toy <span className="text-teal-400">Gallery</span>
       </h2>
 
       <div className="card w-full shadow-xl grid grid-col-1 md:grid-cols-3 space-x-4 space-y-4">

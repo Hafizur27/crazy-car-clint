@@ -6,14 +6,14 @@ const Service = () => {
   return (
    <div >
      <h2 className="text-4xl font-bold text-center  mt-10">
-        <span className="text-orange-500">Why We are</span> best !
+        Why We<span className="text-teal-400"> are best !</span>
       </h2>
      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10" >
       <div className="bg-white p-6 rounded-lg shadow-lg" >
         <img
           src={service1}
           alt="Toy Vehicle Listings"
-          className="rounded mb-4"
+          className="rounded mb-4 h-50 object-cover"
         />
         <h3 className="text-xl font-bold mb-4">Toy Vehicle Listings</h3>
         <p className="text-gray-700">
@@ -29,7 +29,7 @@ const Service = () => {
         <img
           src={service2}
           alt="Toy Car Customization"
-          className="rounded mb-4"
+          className="rounded mb-4 h-50 object-cover"
         />
         <h3 className="text-xl font-bold mb-4">Toy Car Customization</h3>
         <p className="text-gray-700">
@@ -41,7 +41,7 @@ const Service = () => {
         </p>
       </div>
       <div className="bg-white p-6 rounded-lg shadow-lg">
-        <img src={service3} alt="Toy Car Gifts" className="rounded mb-4" />
+        <img src={service3} alt="Toy Car Gifts" className="rounded mb-4 h-60 object-cover" />
         <h3 className="text-xl font-bold mb-4">Toy Car Gifts</h3>
         <p className="text-gray-700">
           Looking for the perfect gift for a young car enthusiast? Our toy car

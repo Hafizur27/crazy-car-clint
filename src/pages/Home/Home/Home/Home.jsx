@@ -8,6 +8,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Reviews from "../../../Reviews/Reviews";
+import TopBrand from "../TopBrand/TopBrand";
+import UpcomingToys from "../../UpcomingToys/UpcomingToys";
 
 const Home = () => {
   useEffect(() => {
@@ -23,6 +25,8 @@ const Home = () => {
       <Banner></Banner>
       <ToyGallery></ToyGallery>
       <ToysCategories></ToysCategories>
+      <UpcomingToys></UpcomingToys>
+      <TopBrand></TopBrand>
       <Service></Service>
       <Reviews></Reviews>
       <AboutUs></AboutUs>
