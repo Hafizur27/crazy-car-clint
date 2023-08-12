@@ -6,7 +6,6 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Home from "../pages/Home/Home/Home/Home";
 import AddToy from "../pages/AddToy/AddToy";
 import AllToys from "../pages/AllToys/AllToys";
-import Blogs from "../pages/Blogs/Blogs";
 import MyToys from "../pages/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute";
 import SingleToy from "../pages/SingleToy/SingleToy";
@@ -43,10 +42,6 @@ const router = createBrowserRouter([
           path: "/allToys/:id",
           element: <PrivateRoute><SingleToy></SingleToy></PrivateRoute>,
           loader: ({params}) => fetch(`https://crazy-car-server.vercel.app/myToys/${params.id}`)
-        },
-        {
-          path: "/blogs",
-          element: <Blogs></Blogs>
         },
         {
           path: "/myToy",

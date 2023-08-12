@@ -6,11 +6,11 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 const Reviews = () => {
     return (
-      <div>
-        <h2 className=" font-bold text-3xl mb-8 text-center ">Customers <span className='text-teal-400'>Reviews</span> </h2>
-          <div className="customer-reviews grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
+      <div className='my-10'>
+        <h2 className=" font-bold text-3xl mb-10 text-center ">Customers <span className='text-teal-400'>Reviews</span> </h2>
+          <div className="customer-reviews grid grid-cols-1 md:grid-cols-3 gap-6 my-12 px-4">
             
-            <div className="review-card shadow-lg rounded-lg p-4">
+            <div className="review-card shadow-lg rounded-lg p-4 ">
               <div className="review-image">
                 <img
                   src={review1}

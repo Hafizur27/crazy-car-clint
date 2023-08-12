@@ -19,21 +19,20 @@ const NavBar = () => {
 
     const navItems = <>
     <li><Link to="/">Home</Link> </li>
-    <li> <Link to="/blogs">Blogs</Link> </li>
     <li> <Link to="/allToys">All Toy</Link> </li>
     {
         user?.email?  <>
         <li><Link to="/myToy">My Toy</Link></li>
         <li><Link to="/addToy" >Add A Toy </Link></li>
         <li> <button onClick={handelLogOut}>Log-out</button> </li>
-       <li title={user?.displayName} className="rounded-xl"><img src={user?.photoURL} alt="" className="w-1/2 " /> </li>
+       <li title={user?.displayName} className=""><img src={user?.photoURL} alt="" className=" rounded-full sm:w-1/3 lg:w-1/2" /> </li>
     </>: <li> <Link to="/login">Login</Link> </li>
     }
      
    
 </>
     return (
-        <div className="navbar  h-28  bg-neutral text-neutral-content">
+        <div className="navbar  h-20  bg-neutral text-neutral-content">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -45,7 +44,7 @@ const NavBar = () => {
                 </div>
               <div className="flex items-center">
               <Link to="/" >
-                    <img src={nav} alt="" className=""/>
+                    <img src={nav} alt="" className="w-3/4 mb-2"/>
                 </Link>
                 <Link to='/' className="text-3xl font-bold w-full ">Crazy <span className="text-red-500">Car</span></Link>
               </div>

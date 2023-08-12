@@ -21,13 +21,13 @@ const ToysCategories = () => {
         <div>
      <div className="w-1/5 mx-auto mb-12">
         <h2 className=" font-bold text-3xl mb-4">Toy <span className="text-teal-400">Categories</span></h2>
-      <div className="tabs font-extrabold">
+      <div className="tabs font-extrabold my-6">
         <a onClick={() => handleTabClick("Sports")} className="tab tab-bordered  text-yellow-400">Sport</a>
         <a onClick={() => handleTabClick("Truck")} className="tab tab-bordered text-pink-400">Truck</a>
         <a onClick={() => handleTabClick("Regular")} className="tab tab-bordered text-violet-400">Regular</a>
       </div>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2  w-11/12 mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-2  px-4">
     {
             toys?.map(toy => <Toy key={toy._id} toy={toy}></Toy> )
         }

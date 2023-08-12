@@ -4,12 +4,12 @@ import service3 from "../../../../assets/service3.jpg";
 
 const Service = () => {
   return (
-   <div >
-     <h2 className="text-4xl font-bold text-center  mt-10">
+   <div className="my-10">
+     <h2 className="text-4xl font-bold text-center  mb-10">
         Why We<span className="text-teal-400"> are best !</span>
       </h2>
-     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10" >
-      <div className="bg-white p-6 rounded-lg shadow-lg" >
+     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-10 px-4" >
+      <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-slate-600" >
         <img
           src={service1}
           alt="Toy Vehicle Listings"
@@ -25,7 +25,7 @@ const Service = () => {
           experience.
         </p>
       </div>
-      <div className="bg-white p-6 rounded-lg shadow-lg">
+      <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-slate-600">
         <img
           src={service2}
           alt="Toy Car Customization"
@@ -40,9 +40,9 @@ const Service = () => {
           style and imagination.
         </p>
       </div>
-      <div className="bg-white p-6 rounded-lg shadow-lg">
-        <img src={service3} alt="Toy Car Gifts" className="rounded mb-4 h-60 object-cover" />
-        <h3 className="text-xl font-bold mb-4">Toy Car Gifts</h3>
+      <div className="bg-white p-6 rounded-lg shadow-lg border-2 border-slate-600">
+        <img src={service3} alt="Toy Car Gifts" className="rounded mb-10 h-54 object-cover" />
+        <h3 className="text-xl font-bold">Toy Car Gifts</h3>
         <p className="text-gray-700">
           Looking for the perfect gift for a young car enthusiast? Our toy car
           gifts are sure to bring joy and excitement. Whether it is a birthday,

@@ -27,7 +27,7 @@ const Toy = ({ toy }) => {
     <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine">
       <div className="card h-screen bg-base-100 shadow-xl mb-4 mr-4">
         <figure>
-          <img src={photo} alt="toys" className="w-full"/>
+          <img src={photo} alt="toys" className="w-full h-96"/>
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>

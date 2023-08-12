@@ -14,7 +14,7 @@ import "swiper/css/autoplay";
 const TopBrand = () => {
   return (
     <div className="mx-6 p-4">
-      <h2 className=" font-bold text-3xl my-6 text-center">
+      <h2 className=" font-bold text-3xl mb-10 text-center ">
         Our <span className="text-teal-400">Brand</span>
       </h2>
       <Swiper
